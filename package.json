@@ -1,0 +1,35 @@
+{
+  "name": "creditcardproviders",
+  "version": "0.0.1",
+  "description": "Esta biblioteca se centraría en identificar el proveedor o tipo de tarjeta de crédito basándose en el número de la tarjeta.",
+  "main": "./dist/creditCard.min.js",
+  "scripts": {
+    "build": "terser src/creditCard.js --compress --mangle --output dist/creditCard.min.js && terser src/providers.js --compress --mangle --output dist/providers.min.js",
+    "test": "mocha test/*",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlsRemy/creditCardProviders.git"
+  },
+  "keywords": [
+    "creditcard",
+    "creditcardproviders",
+    "cardproviders",
+    "Tarjeta de crédito",
+    "validar tarjeta de crédito",
+    "proveedor de tarjeta de crédito",
+    "Republica Dominicana"
+  ],
+  "author": "Carlos I. Ynfante R.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CarlsRemy/creditCardProviders/issues"
+  },
+  "homepage": "https://github.com/CarlsRemy/creditCardProviders#readme",
+  "devDependencies": {
+    "chai": "4.3.8",
+    "mocha": "^10.4.0",
+    "terser": "^5.31.0"
+  }
+}
