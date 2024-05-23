@@ -1,16 +1,15 @@
 # creditCardProviders
 Esta libreria se centraría en identificar el proveedor o tipo de tarjeta de crédito basándose en el número de la tarjeta.
 
-[![NPM Version](https://img.shields.io/npm/v/creditcardproviders.svg)](https://www.npmjs.com/package/creditcardproviders)
+Esta librería es ideal para desarrolladores que necesitan validar o rápidamente identificar el provedor de la tarjeta, creditCardProviders simplifica la validacion de números de tarjetas de crédito conforme al algoritmo de Luhn  y Expreciones Regulares.
 
-> [!NOTE]  
-> Esta libreria no usa  el **Algoritmo de lunh** para validar los numeros de las tarjetas, esta se centra en el formato.
+[![NPM Version](https://img.shields.io/npm/v/creditcardproviders.svg)](https://www.npmjs.com/package/creditcardproviders)
 
 > [!IMPORTANT]  
 > La informacion del formato de las tarjetas fue tomado de [credit-card-type](github.com/braintree/credit-card-type)
 # Funciones Disponibles:
 
-## getCardInfo(number: String): Object
+## getCardInfo(cardNumber: String, luhnCheck: Booleam): Object
 
 Esta funcion nos devuelve un Objeto con la informacion de la Tarjeta.
 
@@ -21,21 +20,20 @@ console.log(card) // amex
 {
 	type: 'amex',
 	validLengths: [15],
-	pinLength: 4
+	pinLength: 4,
+	luhnCheck: false
 }
-
 //Tarjeta Invalida 
 {
 	type: 'unknown',
 	validLengths: [],
-	pinLength: null
+	pinLength: null,
+	luhnCheck: false
 }
-
 ```
-## getCardType(number: String): String
+## getCardType(cardNumber: String): String
 Esta funcion nos devuelve un nombre de la Tarjeta si esta correspone a un formato correcto, de otra manera se retorna **"unknown"**
-## validateCardByProvider(cardType: Providers, number: String): Boolean
-
+## validateCardByProvider(provider: Providers, cardNumber: String): Boolean
 
 Esta funcion nos permie validar la tarjeta a un Provedor específico
 
@@ -44,7 +42,10 @@ const { validateCardByProvider, Providers} = require('creditCardProviders');
 let isVisa = validateCardByProvider(Providers.visa, "4123456789012345")
 console.log(isVisa ? 'Es Visa' : 'No es Visa');
 ```
-## detectCardType(number: String): String
+## validCheckDigit(cardNumber: String): Booleam
+Esta funcion permite identificar si la tarjeta de credito cumple la validacion del algoritmo de luhn
+
+## detectCardType(cardNumber: String): String
 
 Esta funcion permite identificar con los primeros 4 digitos, el tipo de tarjeta, devolviendonos esta el nombre de la misma o **"unknown"** en caso de no ser una tarjeta reconocida.
 

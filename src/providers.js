@@ -32,13 +32,7 @@ const cardDetails = {
 };
 
 /**
- * @typedef {Readonly<Object>} Providers
- * @property {string} visa
- * @property {string} mastercard
- * @property {string} amex
- * @property {string} discover
- * @property {string} dinnerclub
- * @exports Providers
+ * @enum {string} Providers
  */
 const Providers = Object.freeze({
   visa: 'visa',
