@@ -2,6 +2,9 @@
 Esta libreria se centraría en identificar el proveedor o tipo de tarjeta de crédito basándose en el número de la tarjeta.
 
 Esta librería es ideal para desarrolladores que necesitan validar o rápidamente identificar el provedor de la tarjeta, creditCardProviders simplifica la validacion de números de tarjetas de crédito conforme al algoritmo de Luhn  y Expreciones Regulares.
+<p align="center">
+  <img src="https://github.com/CarlsRemy/creditCardProviders/assets/49526881/bdc5cfae-1dc5-4778-a81c-d62f5d08def0" alt="Card Provider"/>
+</p>
 
 [![NPM Version](https://img.shields.io/npm/v/creditcardproviders.svg)](https://www.npmjs.com/package/creditcardproviders)
 

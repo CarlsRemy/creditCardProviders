@@ -1,4 +1,4 @@
-const { cardDetails, Providers } = require('./providers.js')
+const { cardDetails, Providers } = require('./Providers.js')
 /**
  * @param {Providers} provider
  * @param {string} cardNumber
@@ -22,6 +22,18 @@ exports.validateCardByProvider = validateCardByProvider;
 function detectCardType(cardNumber) {
 	cardNumber = cardNumber?.replace(/\D/g,'')
 	if ((cardNumber?.length ?? 0) < 1) {
+		return 'unknown';
+	}
+
+	if ((cardNumber?.length ?? 0) < 12) {
+		return 'unknown';
+	}
+
+	if (cardNumber.slice(0,1) == "2") {
+	  let cardNumber_ =	parent(cardNumber.slice(0,6));    
+		if (cardNumber_ >= 222100 && cardNumber_ <= 272099) {
+			return 'mastercard';
+		}
 		return 'unknown';
 	}
 
@@ -104,7 +116,7 @@ function validCheckDigit(cardNumber){
  * @author Carlos I. Ynfante R. <https://github.com/CarlsRemy>
  * @license MIT
  * @copyright Carlos I. Ynfante R.
- * @version 0.0.2
+ * @version 0.2.0
 */
 exports.validCheckDigit = validCheckDigit;
 exports.Providers = Providers;

@@ -5,14 +5,14 @@ const cardDetails = {
 		length: [12, 16],
 		pinLength: 3
 	},
-	mastercard: { // [51-55],
-		pattern: /^5[1-5][0-9]{14}$/,
+	mastercard: { // [[51-55], [222100-272099]]
+		pattern: /(?^5[1-5][0-9]{14}$|^2(?:2[2-9][1-9]|[3-6][0-9]{2}|7[0-1][0-9]|720)[0-9]{12}$)/,
 		pattern2: /^5[1-5]/,
 		length: [16],
 		pinLength: 3
 	},
 	amex: { // [34, 37],
-		pattern: /^3[47][0-9]{13}$/,
+		pattern:  /^3[47][0-9]{13}$/,
 		pattern2: /^3[47]/,
 		length: [15],
 		pinLength: 4

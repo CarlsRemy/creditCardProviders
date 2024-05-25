@@ -1,6 +1,6 @@
 {
   "name": "creditcardproviders",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Esta biblioteca se centraría en identificar el proveedor o tipo de tarjeta de crédito basándose en el número de la tarjeta.",
   "main": "./dist/creditCard.min.js",
   "scripts": {
